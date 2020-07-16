@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Linkedin, GitHub, Mail, CV } from '../../Icons/Contact';
 
+import { backgroundColor, darkBackgroundColor } from '../../Context/Colors';
+
 const Spacing = styled.div`
 	width: 100%;
 	margin-bottom: ${(props) => props.space}px;
@@ -11,10 +13,18 @@ const Spacing = styled.div`
 	}
 `;
 
+const OuterContainer = styled.div`
+	width: 100vw;
+	background-color: ${backgroundColor};
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+`;
 const ContactsContainer = styled.div`
 	width: 300px;
 	padding-bottom: 50px;
-	background-color: #ffffff;
+	background-color: ${backgroundColor};
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: column;
@@ -154,55 +164,57 @@ const Contacts = () => {
 
 	return (
 		<Fragment>
-			<ContactsContainer id='contacts'>
-				<Spacing space={114.24} mobileSpace={82} />
-				<HeaderText>Contact</HeaderText>
-				<Spacing space={20} mobileSpace={20} />
-				<SubtitleText>Want to know more or just chat? You are welcome!</SubtitleText>
-				<Spacing space={30} mobileSpace={40} />
-				<ContactButton>
-					<ButtonText>Send message</ButtonText>
-				</ContactButton>
-				<Spacing space={85} mobileSpace={48} />
-				<IconContainers>
-					<a href={'https://www.linkedin.com/in/arsaikia/'} target='_blank' rel='noopener noreferrer'>
-						<Icon onMouseOver={focusHandler1} onMouseOut={focusHandler1}>
-							<Linkedin />
-						</Icon>
-					</a>
-					<a href={'https://github.com/arsaikia'} target='_blank' rel='noopener noreferrer'>
-						<Icon onMouseOver={focusHandler2} onMouseOut={focusHandler2}>
-							<GitHub />
-						</Icon>
-					</a>
-					<a href='mailto:asaikia1@hawk.iit.edu' target='_blank' rel='noopener noreferrer'>
-						<Icon onMouseOver={focusHandler3} onMouseOut={focusHandler3}>
-							<Mail />
-						</Icon>
-					</a>
-					<a
-						href=' https://github.com/arsaikia/Contact-Keeper/raw/master/Arunabh_Saikia_Resume(v3.0).pdf'
-						target='_blank'>
-						<Icon onMouseOver={focusHandler4} onMouseOut={focusHandler4}>
-							<CV />
-						</Icon>
-					</a>
-				</IconContainers>
-				<Spacing space={25} mobileSpace={28} />
-				<Badge>
-					{linkedin ? (
-						<p>Go to LinkedIn Page.</p>
-					) : github ? (
-						<p>Go to Github.</p>
-					) : mail ? (
-						<p>Send a mail.</p>
-					) : cv ? (
-						<p>Download resume</p>
-					) : null}
-				</Badge>
-				<Spacing space={20} mobileSpace={20} />
-				<ContactFooter>Contact me through LinkedIn, Github, Gmail, or download my Resume</ContactFooter>
-			</ContactsContainer>
+			<OuterContainer>
+				<ContactsContainer id='contacts'>
+					<Spacing space={114.24} mobileSpace={82} />
+					<HeaderText>Contact</HeaderText>
+					<Spacing space={20} mobileSpace={20} />
+					<SubtitleText>Want to know more or just chat? You are welcome!</SubtitleText>
+					<Spacing space={30} mobileSpace={40} />
+					<ContactButton>
+						<ButtonText>Send message</ButtonText>
+					</ContactButton>
+					<Spacing space={85} mobileSpace={48} />
+					<IconContainers>
+						<a href={'https://www.linkedin.com/in/arsaikia/'} target='_blank' rel='noopener noreferrer'>
+							<Icon onMouseOver={focusHandler1} onMouseOut={focusHandler1}>
+								<Linkedin />
+							</Icon>
+						</a>
+						<a href={'https://github.com/arsaikia'} target='_blank' rel='noopener noreferrer'>
+							<Icon onMouseOver={focusHandler2} onMouseOut={focusHandler2}>
+								<GitHub />
+							</Icon>
+						</a>
+						<a href='mailto:asaikia1@hawk.iit.edu' target='_blank' rel='noopener noreferrer'>
+							<Icon onMouseOver={focusHandler3} onMouseOut={focusHandler3}>
+								<Mail />
+							</Icon>
+						</a>
+						<a
+							href=' https://github.com/arsaikia/Contact-Keeper/raw/master/Arunabh_Saikia_Resume(v3.0).pdf'
+							target='_blank'>
+							<Icon onMouseOver={focusHandler4} onMouseOut={focusHandler4}>
+								<CV />
+							</Icon>
+						</a>
+					</IconContainers>
+					<Spacing space={25} mobileSpace={28} />
+					<Badge>
+						{linkedin ? (
+							<p>Go to LinkedIn Page.</p>
+						) : github ? (
+							<p>Go to Github.</p>
+						) : mail ? (
+							<p>Send a mail.</p>
+						) : cv ? (
+							<p>Download resume</p>
+						) : null}
+					</Badge>
+					<Spacing space={20} mobileSpace={20} />
+					<ContactFooter>Contact me through LinkedIn, Github, Gmail, or download my Resume</ContactFooter>
+				</ContactsContainer>
+			</OuterContainer>
 		</Fragment>
 	);
 };

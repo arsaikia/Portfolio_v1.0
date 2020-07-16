@@ -10,8 +10,10 @@ import Contacts from '../LandingPage/Contacts/Contacts';
 import { Hamburger } from '../Icons/CareerJourney';
 import { MobileSideNav } from './MobilSideNav/MobileSideNav';
 
+import { backgroundColor, darkBackgroundColor, lightGrey } from '../Context/Colors';
+
 const OuterContainer = styled.div`
-	background-color: #ffffff;
+	background-color: ${backgroundColor};
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
@@ -38,7 +40,7 @@ const InnerContainer = styled.div`
 `;
 
 const NavContainer = styled.div`
-	background-color: #ffffff;
+	background-color: ${backgroundColor};
 	position: fixed;
 	height: 8vh;
 	width: 100vw;
@@ -83,7 +85,6 @@ const HeaderContainer = styled.div`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	// background-color: #fc7233;
 
 	@media (max-width: 768px) {
 		flex-direction: column;
