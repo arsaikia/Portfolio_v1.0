@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import styled from 'styled-components';
 
@@ -258,8 +258,11 @@ const Button = styled.div`
 
 const ImageContainer = styled.div`
 	height: 60vh;
-	width: 100%;
+
 	margin-top: 10px;
+
+	display: flex;
+	justify-content: center;
 
 	@media (max-width: 768px) {
 		margin-top: 137px;
@@ -271,11 +274,12 @@ const ImageContainer = styled.div`
 	}
 `;
 const ProfileImage = styled.img`
-	height: 100%;
-	width: 100%;
+	max-width: 100%;
+	height: auto;
+	width: auto;
 `;
 
-const LandingPage = (props) => {
+const LandingPage = () => {
 	const scrollToTop = () => {
 		scroll.scrollToTop();
 	};
@@ -290,6 +294,8 @@ const LandingPage = (props) => {
 	// Change Navbar color
 	const [ selectedNav, setSelectedNav ] = useState('Home');
 	const [ showHamburgerMenu, setShowHamburgerMenu ] = useState(false);
+	const [ avatarImage, setAvatarImage ] = useState('/demo.png');
+
 	const navHandler = (text) => {
 		console.log('Text', text);
 		setSelectedNav(text);
@@ -300,6 +306,25 @@ const LandingPage = (props) => {
 		navHandler(e.target.innerText);
 		scrollToTop();
 	};
+
+	/********************************************************/
+	// let jmediaquery = window.matchMedia('(min-width: 768px)');
+	// useEffect(() => {
+	// 	jmediaquery = window.matchMedia('(min-width: 768px)');
+	// });
+	// useEffect(
+	// 	() => {
+	// 		if (jmediaquery.matches) {
+	// 			return setAvatarImage('/demo.png');
+	// 		}
+	// 		else{
+	// 			return setAvatarImage('/demo1.png');
+	// 		}
+	// 	},
+	// 	[ [], jmediaquery ]
+	// );
+
+	/********************************************************/
 
 	return (
 		<Fragment>
@@ -417,7 +442,7 @@ const LandingPage = (props) => {
 								style={{ display: !underConstruction && 'none', position: 'absolute', padding: '5px' }}>
 								Theme Under Construction
 							</span>
-							<ProfileImage src={process.env.PUBLIC_URL + '/demo.png'} alt='Frame' />
+							<ProfileImage src={process.env.PUBLIC_URL + avatarImage} alt='Frame' />
 						</ImageContainer>
 					</InnerContainer>
 					<AboutMe />
