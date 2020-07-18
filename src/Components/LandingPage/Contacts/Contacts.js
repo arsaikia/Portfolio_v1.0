@@ -144,6 +144,7 @@ const Badge = styled.div`
 `;
 
 const Contacts = () => {
+	const resumeURL = ' https://github.com/arsaikia/Contact-Keeper/raw/master/Arunabh_Saikia_Resume(v3.0).pdf';
 	const [ linkedin, setLinkedin ] = useState(false);
 	const [ github, setGithub ] = useState(false);
 	const [ mail, setMail ] = useState(false);
@@ -191,9 +192,7 @@ const Contacts = () => {
 								<Mail />
 							</Icon>
 						</a>
-						<a
-							href=' https://github.com/arsaikia/Contact-Keeper/raw/master/Arunabh_Saikia_Resume(v3.0).pdf'
-							target='_blank'>
+						<a href={resumeURL} target='_blank'>
 							<Icon onMouseOver={focusHandler4} onMouseOut={focusHandler4}>
 								<CV />
 							</Icon>
