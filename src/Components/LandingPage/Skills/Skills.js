@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-import { FilledStar, EmptyStar } from '../../Icons/Stars';
+import { FilledStar, EmptyStar, HalfStar } from '../../Icons/Stars';
 import { RecatIcon, HTMLIcon, CSSIcon, JSIcon, PythonIcon } from '../../Icons/Skills';
 
 const SkillsContainer = styled.div`
@@ -99,7 +99,7 @@ const StarContainer = styled.div`
 
 const Stars = ({ fiveStars }) => {
 	return fiveStars.map((el) => {
-		return el === 1 ? <FilledStar /> : <EmptyStar />;
+		return el === 1 ? <FilledStar /> : el === 0.5 ? <HalfStar /> : <EmptyStar />;
 	});
 };
 
@@ -113,12 +113,23 @@ const Skills = () => {
 				<BodyContainer>
 					<Body>
 						<ItemContainer>
-							<RecatIcon width={90} />
-							<Spacing space={20} mobileSpace={0} />
+							<RecatIcon width={70} />
 							<SkillName>
 								<p>ReactJS</p>
 							</SkillName>
 							<Spacing space={30} mobileSpace={20} />
+							<StarContainer>
+								<Stars fiveStars={[ 1, 1, 1, 1, 0.5 ]} />
+							</StarContainer>
+							<Spacing space={0} mobileSpace={50} />
+						</ItemContainer>
+
+						<ItemContainer>
+							<JSIcon width={70} />
+							<SkillName>
+								<p>JS</p>
+							</SkillName>
+							<Spacing space={30} mobileSpace={30} />
 							<StarContainer>
 								<Stars fiveStars={[ 1, 1, 1, 1, 0 ]} />
 							</StarContainer>
@@ -126,21 +137,7 @@ const Skills = () => {
 						</ItemContainer>
 
 						<ItemContainer>
-							<JSIcon width={90} />
-							<Spacing space={20} mobileSpace={20} />
-							<SkillName>
-								<p>JS</p>
-							</SkillName>
-							<Spacing space={30} mobileSpace={30} />
-							<StarContainer>
-								<Stars fiveStars={[ 1, 1, 1, 0, 0 ]} />
-							</StarContainer>
-							<Spacing space={0} mobileSpace={50} />
-						</ItemContainer>
-
-						<ItemContainer>
-							<PythonIcon width={100} />
-							<Spacing space={20} mobileSpace={20} />
+							<PythonIcon width={70} />
 							<SkillName>
 								<p>Python</p>
 							</SkillName>
@@ -153,7 +150,6 @@ const Skills = () => {
 
 						<ItemContainer>
 							<HTMLIcon width={70} />
-							<Spacing space={20} mobileSpace={20} />
 							<SkillName>
 								<p>HTML5</p>
 							</SkillName>
@@ -165,14 +161,13 @@ const Skills = () => {
 						</ItemContainer>
 
 						<ItemContainer>
-							<CSSIcon width={100} />
-							<Spacing space={20} mobileSpace={20} />
+							<CSSIcon width={70} />
 							<SkillName>
 								<p>CSS3</p>
 							</SkillName>
 							<Spacing space={30} mobileSpace={30} />
 							<StarContainer>
-								<Stars fiveStars={[ 1, 1, 1, 0, 0 ]} />
+								<Stars fiveStars={[ 1, 1, 1, 0.5, 0 ]} />
 							</StarContainer>
 							<Spacing space={0} mobileSpace={50} />
 						</ItemContainer>

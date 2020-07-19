@@ -12,7 +12,8 @@ const Spacing = styled.div`
 
 const ProjectsContainer = styled.div`
 	width: 100%;
-	height: 3900px;
+	min-height: 4000px;
+	padding-bottom: 50px;
 	background-color: #f6f6f6;
 	display: flex;
 	justify-content: flex-start;
@@ -72,6 +73,158 @@ const ProjectDescriptionContainer = styled.div`
 	}
 	@media (max-width: 768px) {
 		width: 84%;
+	}
+`;
+
+const OtherProjectsContainer = styled.div`
+	margin-top: 20px;
+	width: 936.24px;
+	height: 550px;
+
+	display: grid;
+
+	// padding: 50px;
+	grid-template-columns: repeat(2, 1fr);
+	// grid-gap: 20px;
+	grid-auto-rows: minmax(100px, auto);
+
+	// background-color: turquoise;
+
+	@media (max-width: 768px) {
+		grid-template-columns: repeat(1, 1fr);
+		width: 100%;
+		height: 1250px;
+	}
+`;
+
+const GridColumn1 = styled.div`
+	margin: 10px;
+	grid-column: 1;
+	grid-row: 1;
+	background-color: #ffffff;
+	border-radius: 2vw;
+	border: 2px solid #e8e8e8;
+
+	box-shadow: 4px 4px 4px #e1e1e1;
+	z-index: 1;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	@media (max-width: 768px) {
+		margin: 60px 80px 0px 80px;
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	&:hover {
+		background-color: #292929;
+		opacity: .85;
+		text {
+			color: #ffff;
+	}
+
+	background-color: #292929;
+		opacity: .85;
+		color: #ffff;
+`;
+const GridColumn2 = styled.div`
+	margin: 10px;
+	grid-column: 2;
+	grid-row: 1;
+	background-color: #ffffff;
+	border-radius: 2vw;
+	border: 2px solid #e8e8e8;
+
+	box-shadow: 4px 4px 4px #e1e1e1;
+	z-index: 1;
+	position: relative;
+
+	@media (max-width: 768px) {
+		margin: 60px 80px 0px 80px;
+		grid-column: 1;
+		grid-row: 2;
+	}
+	cursor: pointer;
+	&:hover {
+		background-color: #292929;
+		opacity: .85;
+		text {
+			color: #ffff;
+	}
+`;
+const GridColumn3 = styled.div`
+	margin: 10px;
+	grid-column: 1;
+	grid-row: 2;
+	background-color: #ffffff;
+	border-radius: 2vw;
+	border: 2px solid #e8e8e8;
+
+	box-shadow: 4px 4px 4px #e1e1e1;
+	z-index: 1;
+	position: relative;
+	@media (max-width: 768px) {
+		margin: 60px 80px 0px 80px;
+		grid-column: 1;
+		grid-row: 3;
+	}
+	cursor: pointer;
+	&:hover {
+		background-color: #292929;
+		opacity: .85;
+		text {
+			color: #ffff;
+	}
+`;
+const GridColumn4 = styled.div`
+	margin: 10px;
+	grid-column: 2;
+	grid-row: 2;
+	background-color: #ffffff;
+	border-radius: 2vw;
+	border: 2px solid #e8e8e8;
+
+	box-shadow: 4px 4px 4px #e1e1e1;
+	z-index: 1;
+	position: relative;
+
+	@media (max-width: 768px) {
+		margin: 60px 80px 60px 80px;
+		grid-column: 1;
+		grid-row: 4;
+	}
+	cursor: pointer;
+	&:hover {
+		background-color: #292929;
+		opacity: .85;
+		text {
+			color: #ffff;
+	}
+`;
+
+const DescriptionText = styled.text`
+	font-family: "Gilroy";
+	font-size: 15px;
+	line-height: 14px;
+	font-weight: 500;
+	color: #828282;
+	margin: 30px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	@media (max-width: 450px) {
+		font-size: 10px;
+		// line-height: 10px;
+		font-weight: 600;
+	}
+	cursor: pointer;
+	&:hover {
+		background-color: #292929;
+		opacity: .85;
+		text {
+			color: #ffff;
 	}
 `;
 
@@ -185,26 +338,30 @@ const Projects = () => {
 				<Spacing space={10} mobileSpace={8} />
 				<ProjectDescriptionContainer>
 					<ProjectTextHeader>
-						<h3>Manifest Inc. B2C Application</h3>
+						<h3>Manifest Inc. Client Portal</h3>
 					</ProjectTextHeader>
 					<Spacing space={10} mobileSpace={8} />
 					<ProjectTextBody>
 						<h4>
-							Why the American retirement fund transfer is still so paperwork heavy and time consuming. In
-							collarboration with University of Chicago, <span>Manifest</span> seeks to digitalize the
-							whole process and thus reducig the time required by 80%. <br />
+							It's 2020, but why is the American 401k fund transfer still so paperwork heavy and time
+							consuming? In collarboration with University of Chicago, this is the specific problem{' '}
+							<span>Manifest</span> solves by digitizing the whole process and thus reducig the transfer
+							time by 80%. <br />
 							<br />
 						</h4>
-						<p style={{ textAlign: 'right', color: '#0a192f', fontSize: '15px', fontStyle: 'bold' }}>
-							1.React.js 2.StyledDiv{' '}
+						<p
+							style={{
+								textAlign  : 'right',
+								color      : 'rgba(41,41,41, .85)',
+								fontSize   : '15px',
+								fontWeight : 'bold'
+							}}>
+							| React.js | StyledDiv | Hooks | Styled Components | Jest | Enzyme | {' '}
 						</p>
 					</ProjectTextBody>
 				</ProjectDescriptionContainer>
 				<Spacing space={100} mobileSpace={80} />
-				<a
-					href={'https://arsaikia.github.io/Pathfinding_Visualizer/'}
-					target='_blank'
-					rel='noopener noreferrer'>
+				<a href={'https://arsaikia.tech/'} target='_blank' rel='noopener noreferrer'>
 					<ProjectCard onMouseEnter={() => showGif1(1)} onMouseLeave={() => showGif1(2)}>
 						<ProjectImage src={project2} alt='project2..' />
 					</ProjectCard>
@@ -221,15 +378,21 @@ const Projects = () => {
 							&#128526;
 							<br />
 							<br />
-							<span>I present to you the pathfinding visualizer.</span> If you ever wanted to visually see
-							how Dijkstra's algorithm works this will surely be helpful.
-							<span> Bellman Ford, BFS, DFS and A Star</span> in addition to Dijksta are currently what
-							the application can visualize. Additionally you can create walls by clicking on any of the
-							blocks, drag the source and destination to wherever you like and adjust the speed of
-							animation.
+							I present to you the pathfinding visualizer. If you ever wanted to visually see how
+							Dijkstra's algorithm works this will surely be helpful.
+							<span> Bellman Ford, BFS, DFS </span>and<span> A Star</span> in addition to{' '}
+							<span>Dijksta</span> are currently what the application can visualize. Additionally you can
+							create walls by clicking on any of the blocks, drag the source and destination to wherever
+							you like and adjust the speed of animation.
 						</h4>
-						<p style={{ textAlign: 'right', color: '#0a192f', fontSize: '15px', fontStyle: 'bold' }}>
-							1.React.js 2.MaterialUI 3.StyledDiv{' '}
+						<p
+							style={{
+								textAlign  : 'right',
+								color      : 'rgba(41,41,41, .85)',
+								fontSize   : '15px',
+								fontWeight : 'bold'
+							}}>
+							| React.js | MaterialUI | Sass | Netlify |
 						</p>
 					</ProjectTextBody>
 				</ProjectDescriptionContainer>
@@ -248,14 +411,23 @@ const Projects = () => {
 					<Spacing space={10} mobileSpace={8} />
 					<ProjectTextBody>
 						<h4>
-							<span>Contact Keeper</span> is a MERN Stack application that can be used to add, edit or
-							delete your personal and professional contacts. <br />
+							<span>Contact Keeper</span> is a full stack MERN where a user can register/login to see
+							their contacts. Each user can only access their saved data. In addition to adding user have
+							the functionality to update, delete or filter from their contacts list. State management is
+							handled using Context API and useReducer hooks while JSON Web Token is used for
+							authentication and data transimission through protected routes. <br />
 							<br />
-							The Application uses json web-token to securely transmit user sensitive information. Every
-							user's information is only accessble to only that user.
+							The UI interacts with the backend using the 10 available REST API's built with express.js
+							while the data is stored in MoboDB Atlas.
 						</h4>
-						<p style={{ textAlign: 'right', color: '#0a192f', fontSize: '15px', fontStyle: 'bold' }}>
-							1.React.js 2.Nodejs 3.Express 4.MongoDB 5.JSON Web-token 6.Heroku
+						<p
+							style={{
+								textAlign  : 'right',
+								color      : 'rgba(41,41,41, .85)',
+								fontSize   : '15px',
+								fontWeight : 'bold'
+							}}>
+							| React.js | Nodejs | Express | MongoDB Atlas | JWT | Heroku |
 						</p>
 					</ProjectTextBody>
 				</ProjectDescriptionContainer>
@@ -274,72 +446,107 @@ const Projects = () => {
 					<Spacing space={10} mobileSpace={8} />
 					<ProjectTextBody>
 						<h4>
-							Defined a ReactJS based web application that takes the user through their journey of
-							transfering 401k funds.<br />
-							<br />
-							<span>Consectetur aliquip occaecat</span> laborum reprehenderit magna voluptate eu proident
-							irure. Tempor adipisicing magna aute Lorem ullamco ad do duis dolore. Quis culpa adipisicing
-							veniam laborum deserunt deserunt nulla enim. Exercitation esse officia mollit mollit sint.
-							Enim amet dolore labore ea commodo mollit consequat deserunt minim do. <br />
-							<br />
-							<span>Consectetur aliquip occaecat</span> Aute quis cupidatat aute esse do incididunt sint
-							tempor id mollit nulla. Aliqua nulla anim mollit exercitation qui quis et laboris fugiat
-							cillum minim.Esse nulla reprehenderit et laboris consequat sunt officia elit occaecat. Elit
-							velit mollit ipsum mollit. Duis tempor aliqua duis consectetur non enim labore cupidatat
-							dolor. Labore ut fugiat nisi laboris velit. Enim sint aliquip aliquip minim et cillum dolore
-							nostrud laborum non anim aliqua. Laboris aliqua labore non deserunt voluptate qui eu
-							voluptate consequat fugiat magna. Magna id in dolore Lorem aliqua duis elit.
+							Built a web application, hosted on GitHub Pages that demonstrates the working of a sorting .
+							The application supports 4 of the most common algorithms - Bubble Sort, Selection Sort,
+							Merge Sort and Quick Sort with adjustable animation speed. Array length can be set anywhere
+							from 10 to 185 with delay option in range 0.01ms to 200ms corresponding to the pause between
+							every sorting step.
 						</h4>
-						<p style={{ textAlign: 'right', color: '#0a192f', fontSize: '15px', fontStyle: 'bold' }}>
-							1.React.js 2.MaterialUI 3.StyledDiv{' '}
+						<p
+							style={{
+								textAlign  : 'right',
+								color      : 'rgba(41,41,41, .85)',
+								fontSize   : '15px',
+								fontWeight : 'bold'
+							}}>
+							| React.js | MaterialUI | StyledDiv |
 						</p>
 					</ProjectTextBody>
 				</ProjectDescriptionContainer>
 
+				<Header>
+					<h1>A few other ineresting projects</h1>
+				</Header>
 				<ProjectDescriptionContainer>
-					<ProjectTextHeader>
-						<h3>Other Noteworthy Projects</h3>
-					</ProjectTextHeader>
-					<Spacing space={10} mobileSpace={8} />
-					<ProjectTextBody>
-						<h4>
-							<a
-								href={'https://github.com/arsaikia/E-commerceApp/blob/master/Report.pdf'}
-								target='_blank'
-								rel='noopener noreferrer'>
-								<h6>E-Commerce Clone</h6>
-							</a>
-							<br />
-							laborum reprehenderit magna voluptate eu proident irure. Tempor adipisicing magna aute Lorem
-							ullamco ad do duis dolore. Quis culpa adipisicing veniam laborum deserunt deserunt nulla
-							enim. Exercitation esse officia mollit mollit sint. Enim amet dolore labore ea commodo
-							mollit consequat deserunt minim do. <br />
-							<br />
-						</h4>
-					</ProjectTextBody>
-
-					<Spacing space={10} mobileSpace={8} />
-					<ProjectTextBody>
-						<h4>
-							<a
-								href={
-									'https://github.com/arsaikia/MLND_Capstone_Human_Activity_Recognition_Using_Smartphones_Sensor_Data'
-								}
-								target='_blank'
-								rel='noopener noreferrer'>
-								<h6>
-									To find an Optimum Machine Learning Model for Human Activity Recognition Using
-									Smartphones
-								</h6>
-							</a>
-							<br />
-							laborum reprehenderit magna voluptate eu proident irure. Tempor adipisicing magna aute Lorem
-							ullamco ad do duis dolore. Quis culpa adipisicing veniam laborum deserunt deserunt nulla
-							enim. Exercitation esse officia mollit mollit sint. Enim amet dolore labore ea commodo
-							mollit consequat deserunt minim do. <br />
-							<br />
-						</h4>
-					</ProjectTextBody>
+					<OtherProjectsContainer>
+						<a
+							href={'https://github.com/arsaikia/E-commerceApp'}
+							target='_blank'
+							rel='noopener noreferrer'
+							style={{ textDecoration: 'none' }}>
+							<GridColumn1>
+								<DescriptionText>
+									<h3>E-Commerce Website</h3>
+									<p>
+										• Engineered a fully functional Electronic Vendor Website using JS, jQuery,
+										Bootstrap, HTML5, CSS3, AJAX and used Oracle SQL to track sales, products,
+										inventory and reorders<br />
+										<br /> • Introduced a UI filter using PHP that categorizes products based on
+										manufacturer, product type<br />
+										<br /> • Configured automated re-ordering of products and inventory update when
+										product quantity drops below 20
+									</p>
+								</DescriptionText>
+							</GridColumn1>
+						</a>
+						<a
+							href={
+								'https://github.com/arsaikia/MLND_Capstone_Human_Activity_Recognition_Using_Smartphones_Sensor_Data/blob/master/Capstone_Report.pdf'
+							}
+							target='_blank'
+							rel='noopener noreferrer'
+							style={{ textDecoration: 'none' }}>
+							<GridColumn2>
+								<DescriptionText>
+									<h3>Human Activity Recognition Using Smartphones Sensor Data </h3>
+									<p>
+										• In depth analysis and visualization exploration of how the dataset’s
+										underlying features influences prediction<br />
+										<br /> • Leveraged 4 ML models SVC, Logistic Regression, LGBM and Keras NN to
+										find the optimum model for the problem at hand<br />
+										<br /> • Achieved a state of the art F1 Score: 99.22% and Log Loss Score of
+										0.025 with the optimum SVC
+									</p>
+								</DescriptionText>
+							</GridColumn2>
+						</a>
+						<a
+							href={'https://github.com/arsaikia/Neural-Style-Transfer-for-Images'}
+							target='_blank'
+							rel='noopener noreferrer'
+							style={{ textDecoration: 'none' }}>
+							<GridColumn3>
+								<DescriptionText>
+									<h3>Neural Style Transfer</h3>
+									<p>
+										• Implemented a script that takes a content image and a style image as input,
+										and outputs a mix of the content and style image using deep learning libraries:
+										Keras and Tensorflow<br />
+										<br /> • Achieved state of the art results in 100 iterations comparable to
+										outputs from mobile app Prisma or web app Deepart.io<br />
+									</p>
+								</DescriptionText>
+							</GridColumn3>
+						</a>
+						<a
+							href={'https://github.com/arsaikia/Data-Modeling-with-Cassandra'}
+							target='_blank'
+							rel='noopener noreferrer'
+							style={{ textDecoration: 'none' }}>
+							<GridColumn4>
+								<DescriptionText>
+									<h3>Data Modelling with Apache Cassandra</h3>
+									<p>
+										• Strategized and configured an ETL pipeline for data modeling with Apache
+										Cassandra using Python for a music streaming application, Sparkify<br />
+										<br /> • Application analyzes users’ listening pattern, to further suggest
+										similar songs<br /> <br />
+										<br />
+									</p>
+								</DescriptionText>
+							</GridColumn4>
+						</a>
+					</OtherProjectsContainer>
 				</ProjectDescriptionContainer>
 
 				{/*  */}

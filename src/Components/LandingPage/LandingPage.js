@@ -56,6 +56,7 @@ const NavContainer = styled.div`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	z-index: 10;
 
 	@media (max-width: 768px) {
 		display: none;
