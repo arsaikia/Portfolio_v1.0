@@ -26,6 +26,14 @@ const Space = styled.div`
 	height: ${(props) => props.space}px;
 `;
 
+const InnerPlaceholderContainer = styled.div`
+	// background-color: #292929;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
 const InnerContainer = styled.div`
 	width: 80vw;
 	height: 100vh;
@@ -90,30 +98,6 @@ const HeaderContainer = styled.div`
 		flex-direction: column;
 		align-items: flex-start;
 		height: 25vh;
-	}
-`;
-
-const MobCol1 = styled.div`
-	display: none;
-
-	@media (max-width: 768px) {
-		width: 80%;
-		height: 25vh;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-`;
-
-const MobCol2 = styled.div`
-	display: none;
-
-	@media (max-width: 768px) {
-		width: 20%;
-		height: 25vh;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
 	}
 `;
 
@@ -396,55 +380,61 @@ const LandingPage = () => {
 						</NavItem>
 						<NavItem selectedNav={selectedNav === ''} />
 					</NavContainer>
-					<InnerContainer>
-						<NavBarBottomLine />
-						<HeaderContainer>
-							<HeaderItemLeft>
-								<LeftHeaderText>
-									Arunabh<br /> Saikia
-								</LeftHeaderText>
+					<InnerPlaceholderContainer>
+						<InnerContainer>
+							<NavBarBottomLine />
+							<HeaderContainer>
+								<HeaderItemLeft>
+									<LeftHeaderText>
+										Arunabh<br /> Saikia
+									</LeftHeaderText>
 
-								<MobileRight onClick={() => setShowHamburgerMenu(true)}>
-									<Hamburger />
-								</MobileRight>
-							</HeaderItemLeft>
+									<MobileRight onClick={() => setShowHamburgerMenu(true)}>
+										<Hamburger />
+									</MobileRight>
+								</HeaderItemLeft>
 
-							<HeaderItemCenter>
-								<HeaderThreeText>
-									<p>UI | Full Stack developer, Chicago</p>
-								</HeaderThreeText>
-							</HeaderItemCenter>
+								<HeaderItemCenter>
+									<HeaderThreeText>
+										<p>UI | Full Stack developer, Chicago</p>
+									</HeaderThreeText>
+								</HeaderItemCenter>
 
-							<HeaderItemRight>
-								<Button
-									bg={'#cdcdcd'}
-									color={'black'}
-									onClick={() => {
-										setUnderConstruction((underConstruction) => !underConstruction);
+								<HeaderItemRight>
+									<Button
+										bg={'#cdcdcd'}
+										color={'black'}
+										onClick={() => {
+											setUnderConstruction((underConstruction) => !underConstruction);
+										}}>
+										<p>{'LIGHT '} </p>
+									</Button>
+									{/* <p>{' | '}</p> */}
+									<Button
+										bg={'#0a192f'}
+										color={'#ccd6f6'}
+										onClick={() => {
+											setUnderConstruction((underConstruction) => !underConstruction);
+										}}>
+										<p> {' DARK'}</p>
+									</Button>
+								</HeaderItemRight>
+							</HeaderContainer>
+
+							<ImageContainer>
+								{/* The below span is for theme under construction message over imaege */}
+								<span
+									style={{
+										display  : !underConstruction && 'none',
+										position : 'absolute',
+										padding  : '5px'
 									}}>
-									<p>{'LIGHT '} </p>
-								</Button>
-								{/* <p>{' | '}</p> */}
-								<Button
-									bg={'#0a192f'}
-									color={'#ccd6f6'}
-									onClick={() => {
-										setUnderConstruction((underConstruction) => !underConstruction);
-									}}>
-									<p> {' DARK'}</p>
-								</Button>
-							</HeaderItemRight>
-						</HeaderContainer>
-
-						<ImageContainer>
-							{/* The below span is for theme under construction message over imaege */}
-							<span
-								style={{ display: !underConstruction && 'none', position: 'absolute', padding: '5px' }}>
-								Theme Under Construction
-							</span>
-							<ProfileImage src={process.env.PUBLIC_URL + avatarImage} alt='Frame' />
-						</ImageContainer>
-					</InnerContainer>
+									Theme Under Construction
+								</span>
+								<ProfileImage src={process.env.PUBLIC_URL + avatarImage} alt='Frame' />
+							</ImageContainer>
+						</InnerContainer>
+					</InnerPlaceholderContainer>
 					<AboutMe />
 					<Space space={100} />
 					<Skills />
