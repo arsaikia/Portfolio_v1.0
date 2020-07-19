@@ -13,7 +13,7 @@ const AboutMeContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	overflow: hidden;
-
+	// position: relative;
 	@media (max-width: 768px) {
 		min-height: 1800px;
 	}
@@ -23,7 +23,6 @@ const AboutMeContainer = styled.div`
 		border-radius: 5px;
 		box-shadow: 4px 4px 4px #e1e1e1;
 		z-index: 1;
-		position: relative;
 	}
 `;
 
@@ -146,17 +145,20 @@ const CareerRight = styled.text`
 const CareerDescription = styled.div`
 	padding-left: 20px;
 	padding-right: 10px;
-	width: 600px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 596px;
 	text-align: justify;
 	cursor: pointer;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
-	height: 220px;
+	min-height: 150px;
+	// height: 220px;
 	background-color: #ffffff;
 	border-radius: 2vw;
+	border: 2px solid #e8e8e8;
 
 	box-shadow: 4px 4px 4px #e1e1e1;
 	z-index: 1;
@@ -167,8 +169,8 @@ const CareerDescription = styled.div`
 	}
 
 	@media (max-width: 768px) {
-		width: 70vw;
-		height: 240px;
+		width: 69.5vw;
+		min-height: 240px;
 	}
 
 	@media (max-width: 450px) {
@@ -260,7 +262,9 @@ const AboutMe = () => {
 	};
 	return (
 		<Fragment>
-			<AboutMeContainer id='about'>
+			<AboutMeContainer
+				id='about'
+				blurTile={showTile.manifest || showTile.iit || showTile.udacity || showTile.ibm || showTile.jec}>
 				<Header>
 					<h1>About Me</h1>
 				</Header>
@@ -275,9 +279,7 @@ const AboutMe = () => {
 						experiences.
 						<br />
 						<br />
-						<br />
-						<br />
-						Shortly after graduating from{' '}
+						Shortly after completing my undergraduate from{' '}
 						<span>
 							<a
 								href={'https://jecassam.ac.in/'}
@@ -332,21 +334,22 @@ const AboutMe = () => {
 								<ul style={{ listStyleType: 'triangle' }}>
 									<li>
 										<JobDescriptionText>
-											Write modern, performant, maintainable code for a diverse array of client
-											and internal projects
+											Developed a responsive web application for users to transfer their 401k
+											retirement funds which reduced transfer time by 80% compared to traditional
+											methods.
 										</JobDescriptionText>
 									</li>
 									<li>
 										<JobDescriptionText>
-											Work with a variety of different languages, platforms, frameworks, and
-											content management systems such as JavaScript, TypeScript, Gatsby, React,
-											Craft, Wordpress, Prismic, and Netlify
+											Worked with a variety of languages, frameworks and libraries including
+											JavaScript, TypeScript, React, Node.js, Styled Components, Jest, Enzyme etc.
 										</JobDescriptionText>
 									</li>
 									<li>
 										<JobDescriptionText>
-											Communicate with multi-disciplinary teams of engineers, designers,
-											producers, and clients on a daily basis.
+											Designed a UI library for the reusable components hosted as a npm package.
+											While continuous deployment of the application was handled using a Bitbucket
+											to AWS S3 pipeline.
 										</JobDescriptionText>
 									</li>
 								</ul>
@@ -386,26 +389,18 @@ const AboutMe = () => {
 									setPin(true);
 								}}>
 								<p style={{ paddingTop: '15px' }}>
-									MS in CS <span>@IIT Chicago</span>
+									Graduate Studies <span>@IIT Chicago</span>
 								</p>
 								<ul style={{ listStyleType: 'triangle' }}>
 									<li>
 										<JobDescriptionText>
-											Write modern, performant, maintainable code for a diverse array of client
-											and internal projects
+											Master of Science in Computer Science | GPA: 3.7/4.0
 										</JobDescriptionText>
 									</li>
 									<li>
 										<JobDescriptionText>
-											Work with a variety of different languages, platforms, frameworks, and
-											content management systems such as JavaScript, TypeScript, Gatsby, React,
-											Craft, Wordpress, Prismic, and Netlify
-										</JobDescriptionText>
-									</li>
-									<li>
-										<JobDescriptionText>
-											Communicate with multi-disciplinary teams of engineers, designers,
-											producers, and clients on a daily basis.
+											Coursework: Data Structures and Algorithms, Operating Systems, Database
+											Organization, Enterprise Web Applications, Software Project Management.
 										</JobDescriptionText>
 									</li>
 								</ul>
@@ -443,21 +438,14 @@ const AboutMe = () => {
 								<ul style={{ listStyleType: 'triangle' }}>
 									<li>
 										<JobDescriptionText>
-											Write modern, performant, maintainable code for a diverse array of client
-											and internal projects
+											1.5 years’ experience of reviewing projects in Machine Learning, Data
+											Scientist and Data Engineer Nanodegrees
 										</JobDescriptionText>
 									</li>
 									<li>
 										<JobDescriptionText>
-											Work with a variety of different languages, platforms, frameworks, and
-											content management systems such as JavaScript, TypeScript, Gatsby, React,
-											Craft, Wordpress, Prismic, and Netlify
-										</JobDescriptionText>
-									</li>
-									<li>
-										<JobDescriptionText>
-											Communicate with multi-disciplinary teams of engineers, designers,
-											producers, and clients on a daily basis.
+											Mentored students in batches of 25, reviewed implementations for each
+											assignment: doubling the graduation rate
 										</JobDescriptionText>
 									</li>
 								</ul>
@@ -493,21 +481,26 @@ const AboutMe = () => {
 								<ul style={{ listStyleType: 'triangle' }}>
 									<li>
 										<JobDescriptionText>
-											Write modern, performant, maintainable code for a diverse array of client
-											and internal projects
+											3.5 years’ experience with complete software development lifecycle using
+											Agile Methodologies
 										</JobDescriptionText>
 									</li>
 									<li>
 										<JobDescriptionText>
-											Work with a variety of different languages, platforms, frameworks, and
-											content management systems such as JavaScript, TypeScript, Gatsby, React,
-											Craft, Wordpress, Prismic, and Netlify
+											Developed multiple applications using Micro-Services architecture and
+											Object-Oriented design in Python and Java
 										</JobDescriptionText>
 									</li>
 									<li>
 										<JobDescriptionText>
-											Communicate with multi-disciplinary teams of engineers, designers,
-											producers, and clients on a daily basis.
+											Collaborated with the in-house development of a new web automation framework
+											for a Telecom Client which shortened the testing time by 70%
+										</JobDescriptionText>
+									</li>
+									<li>
+										<JobDescriptionText>
+											Authored a custom Data Management Tool that minimized data validation time
+											by 90%
 										</JobDescriptionText>
 									</li>
 								</ul>
@@ -541,23 +534,23 @@ const AboutMe = () => {
 								</p>
 								<ul style={{ listStyleType: 'triangle' }}>
 									<li>
-										<JobDescriptionText>
-											Write modern, performant, maintainable code for a diverse array of client
-											and internal projects
-										</JobDescriptionText>
+										<JobDescriptionText>B.E. in Mechanical Engineering</JobDescriptionText>
+									</li>
+									<li>
+										<JobDescriptionText>Percentage: 74%</JobDescriptionText>
 									</li>
 									<li>
 										<JobDescriptionText>
-											Work with a variety of different languages, platforms, frameworks, and
-											content management systems such as JavaScript, TypeScript, Gatsby, React,
-											Craft, Wordpress, Prismic, and Netlify
+											Authored 1 research paper: ‘Design, Fabrication and Performance evaluation
+											of Solar Water Still’ published at IJERT{' '}
 										</JobDescriptionText>
-									</li>
-									<li>
-										<JobDescriptionText>
-											Communicate with multi-disciplinary teams of engineers, designers,
-											producers, and clients on a daily basis.
-										</JobDescriptionText>
+										<a
+											href={
+												'https://www.ijert.org/research/design-fabrication-and-performance-evaluation-of-solar-water-still-IJERTV7IS090064.pdf'
+											}
+											target='_blank'>
+											(Paper link)
+										</a>
 									</li>
 								</ul>
 							</CareerDescription>
