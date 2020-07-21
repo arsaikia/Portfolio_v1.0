@@ -147,8 +147,21 @@ const HeaderItemLeft = styled.div`
 `;
 
 const LeftHeaderText = styled.text`
+	font-family: "Gilroy";
+
+	font-weight: 800;
+	font-size: 90px;
+	line-height: 70px;
+	// height: 146px;
+
+	@media (max-width: 1024px) {
+		font-size: 75px;
+		line-height: 70px;
+	}
+
 	@media (max-width: 768px) {
-		// background-color: purple;
+		font-size: 65px;
+		line-height: 60px;
 		flex: 12;
 		height: 166px;
 	}
@@ -243,7 +256,7 @@ const Button = styled.div`
 
 const ImageContainer = styled.div`
 	height: 60vh;
-
+	background-color: rgba(41, 41, 41, .85);
 	margin-top: 10px;
 
 	display: flex;
@@ -279,7 +292,7 @@ const LandingPage = () => {
 	// Change Navbar color
 	const [ selectedNav, setSelectedNav ] = useState('Home');
 	const [ showHamburgerMenu, setShowHamburgerMenu ] = useState(false);
-	const [ avatarImage, setAvatarImage ] = useState('/demo.png');
+	const [ avatarImage, setAvatarImage ] = useState('/demoXX.png');
 
 	const navHandler = (text) => {
 		console.log('Text', text);
@@ -291,25 +304,6 @@ const LandingPage = () => {
 		navHandler(e.target.innerText);
 		scrollToTop();
 	};
-
-	/********************************************************/
-	// let jmediaquery = window.matchMedia('(min-width: 768px)');
-	// useEffect(() => {
-	// 	jmediaquery = window.matchMedia('(min-width: 768px)');
-	// });
-	// useEffect(
-	// 	() => {
-	// 		if (jmediaquery.matches) {
-	// 			return setAvatarImage('/demo.png');
-	// 		}
-	// 		else{
-	// 			return setAvatarImage('/demo1.png');
-	// 		}
-	// 	},
-	// 	[ [], jmediaquery ]
-	// );
-
-	/********************************************************/
 
 	return (
 		<Fragment>
@@ -432,7 +426,7 @@ const LandingPage = () => {
 									}}>
 									Theme Under Construction
 								</span>
-								<ProfileImage src={process.env.PUBLIC_URL + avatarImage} alt='Frame' />
+								<ProfileImage src={process.env.PUBLIC_URL + avatarImage} alt='' />
 							</ImageContainer>
 						</InnerContainer>
 					</InnerPlaceholderContainer>
