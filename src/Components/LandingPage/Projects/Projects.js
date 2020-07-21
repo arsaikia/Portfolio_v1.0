@@ -110,10 +110,12 @@ const GridColumn1 = styled.div`
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
+	
 	@media (max-width: 768px) {
-		margin: 60px 80px 0px 80px;
+		margin: 30px 30px 0px 30px;
 		grid-column: 1;
 		grid-row: 1;
+		border-radius: 5vw;
 	}
 
 	&:hover {
@@ -140,9 +142,10 @@ const GridColumn2 = styled.div`
 	position: relative;
 
 	@media (max-width: 768px) {
-		margin: 60px 80px 0px 80px;
+		margin: 30px 30px 0px 30px;
 		grid-column: 1;
 		grid-row: 2;
+		border-radius: 5vw;
 	}
 	cursor: pointer;
 	&:hover {
@@ -164,9 +167,10 @@ const GridColumn3 = styled.div`
 	z-index: 1;
 	position: relative;
 	@media (max-width: 768px) {
-		margin: 60px 80px 0px 80px;
+		margin: 30px 30px 0px 30px;
 		grid-column: 1;
 		grid-row: 3;
+		border-radius: 5vw;
 	}
 	cursor: pointer;
 	&:hover {
@@ -189,9 +193,10 @@ const GridColumn4 = styled.div`
 	position: relative;
 
 	@media (max-width: 768px) {
-		margin: 60px 80px 60px 80px;
+		margin: 30px 30px 30px 30px;
 		grid-column: 1;
 		grid-row: 4;
+		border-radius: 5vw;
 	}
 	cursor: pointer;
 	&:hover {
