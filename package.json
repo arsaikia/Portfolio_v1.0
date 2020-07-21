@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"homepage": ".",
+	"homepage": "https://arsaikia.github.io",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
@@ -20,7 +20,7 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "CI= react-scripts build",
+		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"flow": "flow",
