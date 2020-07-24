@@ -22,7 +22,7 @@ function App () {
 
 	return (
 		<Fragment>
-			<LandingPage isLoading={isLoading} />
+			<LandingPage />
 		</Fragment>
 	);
 }

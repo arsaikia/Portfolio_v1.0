@@ -281,7 +281,7 @@ const ProfileImage = styled.img`
 	width: auto;
 `;
 
-const LandingPage = ({ isLoading, props }) => {
+const LandingPage = ({ props }) => {
 	const scrollToTop = () => {
 		scroll.scrollToTop();
 	};
@@ -325,7 +325,7 @@ const LandingPage = ({ isLoading, props }) => {
 				document.removeEventListener('keydown', keyHandler, false);
 			};
 		},
-		[ [], isLoading ]
+		[ ]
 	);
 
 	return (
