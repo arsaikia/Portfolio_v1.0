@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from 'react';
+import React, { useState, Fragment, useEffect, useCallback } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import styled from 'styled-components';
 
@@ -11,6 +11,7 @@ import { Hamburger } from '../Icons/CareerJourney';
 import { MobileSideNav } from './MobilSideNav/MobileSideNav';
 
 import { backgroundColor, darkBackgroundColor, lightGrey } from '../Context/Colors';
+import Snake from '../SnakeGame/snake';
 
 const OuterContainer = styled.div`
 	background-color: ${backgroundColor};
@@ -255,16 +256,18 @@ const Button = styled.div`
 `;
 
 const ImageContainer = styled.div`
-	height: 60vh;
-	background-color: rgba(41, 41, 41, .85);
+	height: 62vh;
+	background-color: radial-gradient(#333, #111);
 	margin-top: 10px;
 
 	display: flex;
 	justify-content: center;
+	align-items: center;
 
 	@media (max-width: 768px) {
-		margin-top: 137px;
-		height: 56vh;
+		margin-top: 29vh;
+		height: 40%;
+		// width: 90%;
 	}
 
 	@media (max-width: 450px) {
@@ -277,7 +280,7 @@ const ProfileImage = styled.img`
 	width: auto;
 `;
 
-const LandingPage = () => {
+const LandingPage = ({ isLoading, props }) => {
 	const scrollToTop = () => {
 		scroll.scrollToTop();
 	};
@@ -288,6 +291,8 @@ const LandingPage = () => {
 
 	// Theme Under Construction
 	const [ underConstruction, setUnderConstruction ] = useState(false);
+	// Play Snake Game
+	const [ showArrowInfo, setShowArrowInfo ] = useState('Click Here!');
 
 	// Change Navbar color
 	const [ selectedNav, setSelectedNav ] = useState('Home');
@@ -304,6 +309,23 @@ const LandingPage = () => {
 		navHandler(e.target.innerText);
 		scrollToTop();
 	};
+
+	// Snake Game key pressed handelr
+	const keyHandler = useCallback((event) => {
+		if (event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39) {
+			setShowArrowInfo('');
+		}
+	}, []);
+
+	useEffect(
+		() => {
+			document.addEventListener('keydown', keyHandler, false);
+			return () => {
+				document.removeEventListener('keydown', keyHandler, false);
+			};
+		},
+		[ [], isLoading ]
+	);
 
 	return (
 		<Fragment>
@@ -417,6 +439,7 @@ const LandingPage = () => {
 							</HeaderContainer>
 
 							<ImageContainer>
+								<Snake />
 								{/* The below span is for theme under construction message over imaege */}
 								<span
 									style={{
@@ -425,6 +448,23 @@ const LandingPage = () => {
 										padding  : '5px'
 									}}>
 									Theme Under Construction
+								</span>
+								<span
+									onClick={() => {
+										return showArrowInfo === 'Click Here!'
+											? setShowArrowInfo('Use Arrow keys to play :)')
+											: setShowArrowInfo('');
+									}}
+									style={{
+										display   : true,
+										position  : 'absolute',
+										padding   : '5px',
+										color     : 'rgba(78,120,247, 0.65)',
+										fontSize  : '28px',
+										cursor    : 'pointer',
+										marginTop : '100px'
+									}}>
+									{showArrowInfo}
 								</span>
 								<ProfileImage src={process.env.PUBLIC_URL + avatarImage} alt='' />
 							</ImageContainer>

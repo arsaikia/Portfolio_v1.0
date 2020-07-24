@@ -3,6 +3,7 @@ import './index.css';
 import './App.css';
 import Loader from '../src/Components/Loader/Loader';
 import LandingPage from './Components/LandingPage/LandingPage.js';
+import Snake from './Components/SnakeGame/snake';
 
 function App () {
 	const [ isLoading, setIsLoading ] = useState(true);
@@ -21,7 +22,7 @@ function App () {
 
 	return (
 		<Fragment>
-			<LandingPage />
+			<LandingPage isLoading={isLoading} />
 		</Fragment>
 	);
 }

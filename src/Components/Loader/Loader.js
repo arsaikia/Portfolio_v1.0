@@ -18,7 +18,7 @@ const Loader = () => {
 		<CenteredContainer>
 			<div class='rubiks-loader'>
 				<div class='cube'>
-					<div class='face front piece row-top    col-left   yellow' />
+					<div className='face front piece row-top    col-left   yellow' />
 					<div class='face front piece row-top    col-center green ' />
 					<div class='face front piece row-top    col-right  white ' />
 					<div class='face front piece row-center col-left   blue  ' />

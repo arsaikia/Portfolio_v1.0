@@ -1,9 +1,9 @@
 /* Presentation purposes*/
-html,
+/* html,
 body {
 	margin: 0;
 	padding: 0;
-}
+} */
 /* body {
 	display: flex;
 	width: 100vw;
@@ -11,9 +11,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	background-color: #1d1e22;
-} */ */
-/* Box model */
-.rubiks-loader *,
+} */
+*/ /* Box model */ .rubiks-loader *,
 .rubiks-loader *::before,
 .rubiks-loader *::after {
 	box-sizing: border-box;
