@@ -96,7 +96,7 @@ const OnceCareer = styled.div`
 	cursor: 'pointer';
 
 	@media (max-width: 768px) {
-		height: 250px;
+		min-height: 260px;
 	}
 `;
 
@@ -128,12 +128,12 @@ const CareerRight = styled.text`
 	cursor: pointer;
 
 	@media (max-width: 1080px) {
-		height: 200px;
+		min-height: 200px;
 	}
 
 	@media (max-width: 768px) {
 		width: 70vw;
-		height: 230px;
+		min-height: 230px;
 	}
 
 	@media (max-width: 450px) {
@@ -141,7 +141,7 @@ const CareerRight = styled.text`
 		height: 240px;
 	}
 `;
-
+// For line alignment
 const CareerDescription = styled.div`
 	padding-left: 20px;
 	padding-right: 10px;
@@ -175,8 +175,9 @@ const CareerDescription = styled.div`
 
 	@media (max-width: 450px) {
 		font-size: 10px;
-		// line-height: 10px;
+		min-height: 250px;
 		font-weight: 600;
+		width: 70vw;
 	}
 `;
 
@@ -348,8 +349,7 @@ const AboutMe = () => {
 									<li>
 										<JobDescriptionText>
 											Designed a UI library for the reusable components hosted as a npm package.
-											While continuous deployment of the application was handled using a Bitbucket
-											to AWS S3 pipeline.
+											Continuous deployment was handled using a Bitbucket-AWS S3 pipeline.
 										</JobDescriptionText>
 									</li>
 								</ul>

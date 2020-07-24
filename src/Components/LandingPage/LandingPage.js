@@ -271,6 +271,7 @@ const ImageContainer = styled.div`
 	}
 
 	@media (max-width: 450px) {
+		margin-top: 20vh;
 		height: 40vh;
 	}
 `;
@@ -452,7 +453,7 @@ const LandingPage = ({ isLoading, props }) => {
 								<span
 									onClick={() => {
 										return showArrowInfo === 'Click Here!'
-											? setShowArrowInfo('Use Arrow keys to play :)')
+											? setShowArrowInfo('Use Arrow keys to play')
 											: setShowArrowInfo('');
 									}}
 									style={{
