@@ -281,6 +281,124 @@ const ProfileImage = styled.img`
 	width: auto;
 `;
 
+const DivContainer = styled.div`
+	width: 90%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	@media (max-width: 768px) {
+		width: 100%;
+	}
+	@media (max-width: 450px) {
+		padding-top: 70px;
+	}
+`;
+
+const DivOne = styled.div`
+	width: 100%;
+	height: 90%;
+	background-color: rgb(189, 126, 179, 0.80);
+
+	display: flex;
+	align-self: flex-start;
+	align-items: center;
+	justify-content: center;
+	animation-duration: 1s;
+	animation-name: slidein;
+	animation-timing-function: ease-in-out;
+	@keyframes slidein {
+		from {
+			max-height: 0%;
+		}
+		to {
+			max-height: 90%;
+		}
+	}
+`;
+const DivTwo = styled.div`
+	width: 100%;
+	height: 90%;
+	background-color: rgb(252, 199, 119, 0.80);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: flex-end;
+	animation-duration: 1s;
+	animation-name: slidein;
+	animation-timing-function: ease-in-out;
+	@keyframes slidein {
+		from {
+			max-height: 0%;
+		}
+		to {
+			max-height: 90%;
+		}
+	}
+`;
+
+const DivThree = styled.div`
+	width: 100%;
+	height: 90%;
+	background-color: rgb(84, 197, 195, 0.80);
+
+	display: flex;
+	align-self: flex-start;
+	justify-content: center;
+	align-items: center;
+	animation-duration: 1s;
+	animation-name: slidein;
+	animation-timing-function: ease-in-out;
+	@keyframes slidein {
+		from {
+			max-height: 0%;
+		}
+		to {
+			max-height: 90%;
+		}
+	}
+`;
+
+const TextStyled = styled.text`
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	text-align: center;
+
+	justify-content: center;
+	color: ${(props) => (props.color ? props.color : '#ffff')};
+
+	font-weight: 600;
+	font-size: 50px;
+	line-height: 55px;
+
+	animation: fadeInAnimation ease-in 1.5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	@keyframes fadeInAnimation {
+		0% {
+			opacity: 0;
+		}
+		30% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 768px) {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 25px;
+	}
+`;
+
 const LandingPage = ({ props }) => {
 	const scrollToTop = () => {
 		scroll.scrollToTop();
@@ -318,15 +436,12 @@ const LandingPage = ({ props }) => {
 		}
 	}, []);
 
-	useEffect(
-		() => {
-			document.addEventListener('keydown', keyHandler, false);
-			return () => {
-				document.removeEventListener('keydown', keyHandler, false);
-			};
-		},
-		[ ]
-	);
+	useEffect(() => {
+		document.addEventListener('keydown', keyHandler, false);
+		return () => {
+			document.removeEventListener('keydown', keyHandler, false);
+		};
+	}, []);
 
 	return (
 		<Fragment>
@@ -440,7 +555,7 @@ const LandingPage = ({ props }) => {
 							</HeaderContainer>
 
 							<ImageContainer>
-								<Snake />
+								{/* <Snake /> */}
 								{/* The below span is for theme under construction message over imaege */}
 								<span
 									style={{
@@ -450,7 +565,7 @@ const LandingPage = ({ props }) => {
 									}}>
 									Theme Under Construction
 								</span>
-								<span
+								{/* <span
 									onClick={() => {
 										return showArrowInfo === 'Click Here!'
 											? setShowArrowInfo('Use Arrow keys to play')
@@ -466,8 +581,20 @@ const LandingPage = ({ props }) => {
 										marginTop : '100px'
 									}}>
 									{showArrowInfo}
-								</span>
+								</span> */}
 								<ProfileImage src={process.env.PUBLIC_URL + avatarImage} alt='' />
+
+								<DivContainer>
+									<DivOne>
+										<TextStyled>Full Stack</TextStyled>
+									</DivOne>
+									<DivTwo>
+										<TextStyled color={'#828282'}>Problem Solving</TextStyled>
+									</DivTwo>
+									<DivThree>
+										<TextStyled>UI UX</TextStyled>
+									</DivThree>
+								</DivContainer>
 							</ImageContainer>
 						</InnerContainer>
 					</InnerPlaceholderContainer>

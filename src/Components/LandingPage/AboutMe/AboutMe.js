@@ -15,7 +15,7 @@ const AboutMeContainer = styled.div`
 	overflow: hidden;
 	// position: relative;
 	@media (max-width: 768px) {
-		min-height: 1800px;
+		min-height: 2000px;
 	}
 	@media (max-width: 450px) {
 		padding-top: 70px;
@@ -147,7 +147,7 @@ const CareerDescription = styled.div`
 	padding-right: 10px;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	width: 596px;
+	width: 600px;
 	text-align: justify;
 	cursor: pointer;
 
@@ -164,12 +164,8 @@ const CareerDescription = styled.div`
 	z-index: 1;
 	position: relative;
 
-	@media (max-width: 1080px) {
-		height: 200px;
-	}
-
 	@media (max-width: 768px) {
-		width: 69.5vw;
+		width: 70vw;
 		min-height: 240px;
 	}
 

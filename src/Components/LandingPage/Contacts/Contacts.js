@@ -173,7 +173,13 @@ const Contacts = () => {
 					<SubtitleText>Want to know more or just chat? You are welcome!</SubtitleText>
 					<Spacing space={30} mobileSpace={40} />
 					<ContactButton>
-						<ButtonText>Send message</ButtonText>
+						<a
+							href='mailto:asaikia1@hawk.iit.edu'
+							target='_blank'
+							rel='noopener noreferrer'
+							style={{ textDecoration: 'none' }}>
+							<ButtonText>Send message</ButtonText>
+						</a>
 					</ContactButton>
 					<Spacing space={85} mobileSpace={48} />
 					<IconContainers>

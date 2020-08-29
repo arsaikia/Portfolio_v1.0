@@ -11,14 +11,14 @@ function App () {
 		() => {
 			setTimeout(() => {
 				setIsLoading(false);
-			}, Math.random() * 5000);
+			}, Math.random() * 3000);
 		},
 		[ isLoading ]
 	);
 
-	// if (isLoading) {
-	// 	return <Loader />;
-	// }
+	if (isLoading) {
+		return <Loader />;
+	}
 
 	return (
 		<Fragment>
